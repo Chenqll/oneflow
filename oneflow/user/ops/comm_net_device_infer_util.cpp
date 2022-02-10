@@ -26,7 +26,7 @@ Maybe<bool> IsAsyncLaunched(user_op::DeviceInferContext* ctx) {
 namespace {
 
 Maybe<Symbol<Device>> RawGetNcclDevice(bool is_async_launced) {
-  return Device::New(is_async_launced ? "async_launched_nccl" : "sync_launched_nccl");
+  return Device::New("async_launched_nccl");
 }
 
 Maybe<Symbol<Device>> RawGetCpuTransportDevice() { return Device::New("comm_net"); }
